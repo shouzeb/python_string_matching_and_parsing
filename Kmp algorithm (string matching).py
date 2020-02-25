@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+#credits to moonlight
 """
 
 Created on Mon Feb 24 21:10:32 2020
@@ -9,20 +9,19 @@ Created on Mon Feb 24 21:10:32 2020
 """
 
 #Knuth–Morris–Pratt algorithm or KMP algorithm
+
 def testing_Data():
-    p1 = "aa"
-    t1 = "aaaaaaaa"
+    search1 = "aa"
+    test1 = "aaaaaaaa"
 
     kmp = KMP()
-    assert(kmp.searching(t1, p1) == [0, 1, 2, 3, 4, 5, 6])
+    assert(kmp.searching(test1, search1) == [0, 1, 2, 3, 4, 5, 6])
     print("test 1 pass")
     
     p2 = "abc"
     t2 = "abdabeabfabca"
-    print("test 2 pass")
-
-
     assert(kmp.searching(t2, p2) == [9])
+    print("test 2 pass")
 
     p3 = "aab"
     t3 = "aaabaacbaab"
@@ -33,7 +32,9 @@ def testing_Data():
     
 class KMP:
     def partial(self, pattern):
-        """ Calculate partial match table: String -> [Int]"""
+        """ 
+        Calculate partial match table: String -> [Int]
+        """
         ret = [0]
         
         for i in range(1, len(pattern)):
